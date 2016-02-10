@@ -1,0 +1,73 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="DailyCals.MyProfile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="DAILY CALS" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="my profile" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,6,0,0" Name="textBlock1" Text="Birthdate" VerticalAlignment="Top" />
+            <toolkit:DatePicker HorizontalAlignment="Left" Margin="0,28,0,0" Name="dpBirthdate" VerticalAlignment="Top" Width="230" Value="1/1/1980"/>
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="236,6,0,0" Name="txtHeight" Text="Height (in)" VerticalAlignment="Top" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="226,28,0,0" Name="tbHeight" Text="" VerticalAlignment="Top" Width="230" InputScope="Number" MaxLength="6" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,106,0,0" Name="txtStart" Text="Start Weight (lbs)" VerticalAlignment="Top" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="0,128,0,0" Name="tbStartWeight" Text="" VerticalAlignment="Top" Width="318" InputScope="Number" MaxLength="6" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,206,0,0" Name="txtGoal" Text="Goal Weight (lbs)" VerticalAlignment="Top" />
+            <TextBox Height="72" Margin="0,228,138,0" Name="tbGoalWeight" Text="" VerticalAlignment="Top" InputScope="Number" MaxLength="6" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,306,0,0" Name="textBlock4" Text="Lose Weight By" VerticalAlignment="Top" />
+            <toolkit:DatePicker HorizontalAlignment="Left" Margin="0,327,0,0" Name="dpGoalDate" VerticalAlignment="Top" Width="456" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,405,0,0" Name="textBlock5" Text="Sex" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="177,405,0,0" Name="textBlock6" Text="Activity Level" VerticalAlignment="Top" />
+            <Slider Height="84" HorizontalAlignment="Left" Margin="166,435,0,0" Name="slActivityLevel" VerticalAlignment="Top" Width="284" Value="2.5" ValueChanged="slActivityLevel_ValueChanged" />
+            <RadioButton Content="Female" Height="72" HorizontalAlignment="Left" Margin="0,426,0,0" Name="rbFemale" VerticalAlignment="Top" IsChecked="True" GroupName="sex" />
+            <RadioButton Content="Male" Height="72" HorizontalAlignment="Left" Margin="0,489,0,0" Name="rbMale" VerticalAlignment="Top" GroupName="sex" />
+            <Button Content="Update Profile" Height="91" HorizontalAlignment="Left" Margin="166,516,0,0" Name="btnUpdateProfile" VerticalAlignment="Top" Width="290" Background="DarkSeaGreen" Foreground="Black" BorderThickness="1" Click="btnUpdateProfile_Click" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="310,405,0,0" Name="txtActivityLevelMsg" Text="(1: Normal)" VerticalAlignment="Top" Foreground="LimeGreen" />
+            <TextBlock Height="24" HorizontalAlignment="Left" Margin="99,11,0,0" Name="txtBirthdateMsg" Text="" VerticalAlignment="Top" Width="131" FontSize="16" Foreground="Red" />
+            <TextBlock FontSize="16" Foreground="Red" Height="24" HorizontalAlignment="Left" Margin="177,111,0,0" Name="txtStartWeightMsg" Text="" VerticalAlignment="Top" Width="273" />
+            <TextBlock FontSize="16" Foreground="Red" Height="24" HorizontalAlignment="Left" Margin="177,210,0,0" Name="txtGoalWeightMsg" Text="" VerticalAlignment="Top" Width="273" />
+            <TextBlock FontSize="16" Foreground="Red" Height="24" HorizontalAlignment="Left" Margin="154,310,0,0" Name="txtGoalDateMsg" Text="" VerticalAlignment="Top" Width="296" />
+            <TextBlock FontSize="16" Foreground="Red" Height="24" HorizontalAlignment="Right" Margin="0,11,6,0" Name="txtHeightMsg" Text="" VerticalAlignment="Top" Width="107" />
+            <toolkit:PerformanceProgressBar x:Name="performanceProgressBar" IsIndeterminate="True" Visibility="Collapsed" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="336,140,0,0" Name="textBlock8" Text="Units" VerticalAlignment="Top" Width="57" />
+            <RadioButton Content="in/lb" GroupName="units" Height="72" HorizontalAlignment="Left" IsChecked="True" Margin="324,157,0,0" Name="rbStandard" VerticalAlignment="Top" Width="128" Checked="rbStandard_Checked" Unchecked="rbStandard_Unchecked" />
+            <RadioButton Content="cm/kg" GroupName="units" Height="72" HorizontalAlignment="Left" Margin="324,212,0,0" Name="rbMetric" VerticalAlignment="Top" Width="130" />
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

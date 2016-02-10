@@ -1,0 +1,71 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="DailyCals.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:charting="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+    xmlns:local="clr-namespace:DailyCals"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI">
+
+    <phone:PhoneApplicationPage.Resources>
+        <!-- Data -->
+        <local:WeightDataForChart x:Key="WeightDataForChart"/>
+        <local:BaselineDataForChart x:Key="BaselineDataForChart"/>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama Title="daily cals">
+
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="progress">
+        		<!--ContentPanel - place additional content here-->
+                <Grid>
+                    <Button Background="DarkSeaGreen" BorderThickness="1" Content="My Profile" Height="72" HorizontalAlignment="Left" Margin="30,426,0,0" Name="btnMyProfile" VerticalAlignment="Top" Width="164" Foreground="Black" Click="btnMyProfile_Click" />
+                    <Button Background="DarkSeaGreen" BorderThickness="1" Content="View Plan" Height="72" HorizontalAlignment="Left" Margin="196,426,0,0" Name="btnViewPlan" VerticalAlignment="Top" Width="164" Foreground="Black" Click="btnViewPlan_Click" />
+                    <TextBlock Height="82" HorizontalAlignment="Left" Margin="15,0,0,0" Name="txtSummaryMsg" Text="" VerticalAlignment="Top" Width="405" TextWrapping="Wrap" />
+                    <TextBlock Height="160" HorizontalAlignment="Left" Margin="15,97,0,0" Name="tbWelcome" Text="Welcome to Daily Cals! Tap the 'Login' button to get started!" VerticalAlignment="Top" Width="382" TextWrapping="Wrap" FontSize="36" TextAlignment="Center" Foreground="SteelBlue" Visibility="Collapsed" />
+                    <TextBlock Height="88" HorizontalAlignment="Left" Margin="177,307,0,0" Name="txtDaysMsg" Text="" VerticalAlignment="Top" Width="226" TextWrapping="Wrap" FontSize="18" />
+                    <TextBlock Height="90" HorizontalAlignment="Left" Margin="16,92,0,0" Name="txtMaxCals" Text="" VerticalAlignment="Top" FontSize="64" Foreground="Green" Width="148" TextAlignment="Right" />
+                    <TextBlock Height="88" HorizontalAlignment="Left" Margin="176,100,0,0" Name="txtMaxCalsMsg" Text="" VerticalAlignment="Top" Width="226" TextWrapping="Wrap" FontSize="18" />
+                    <TextBlock FontSize="18" Height="88" HorizontalAlignment="Left" Margin="176,203,0,0" Name="txtPercCompMsg" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" />
+                    <TextBlock FontSize="64" Foreground="Green" Height="90" HorizontalAlignment="Left" Margin="16,197,0,0" Name="txtPercComp" Text="" VerticalAlignment="Top" Width="148" TextAlignment="Right" />
+                    <Image Height="32" HorizontalAlignment="Left" Margin="375,446,0,0" Name="imgAbout" Stretch="Fill" VerticalAlignment="Top" Width="32" Source="/DailyCals;component/Images/About.png" Tap="imgAbout_Tap" />
+                    <TextBlock FontSize="64" Foreground="Green" Height="90" HorizontalAlignment="Left" Margin="16,302,0,0" Name="txtDays" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="148" />
+                    <TextBlock Height="20" HorizontalAlignment="Left" Margin="372,478,0,0" Name="txtDemoIndicator" Text="DEMO" VerticalAlignment="Top" FontSize="14" Foreground="Red" Visibility="Collapsed" />
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="chart">
+                <!--ContentPanel - place additional content here-->
+                <Grid>
+                    <charting:Chart Style="{StaticResource PhoneChartStyle}" Template="{StaticResource PhoneChartPortraitTemplate}" Margin="0,-135,0,0" Name="chartProgress" Height="355" Width="403">
+                        <!-- Let us see if his works with the data binding. -->
+                        <!--charting:LineSeries IsSelectionEnabled="True" Title="Visits" ItemsSource="{Binding}" IndependentValueBinding="{Binding Path=wrDate}" DependentValueBinding="{Binding Path=wrWeight}" Name="lsProgress"/-->
+                        <charting:Chart.Axes>
+                            <!--charting:CategoryAxis Title="Weight" Orientation="Y"/-->
+                            <charting:LinearAxis Title="Number of Days" Orientation="X"/>
+                        </charting:Chart.Axes>
+                        <!--charting:LineSeries x:Name="WeighInDataForChart" Title="Your Progress     " ItemsSource="{StaticResource WeightDataForChart}" IndependentValueBinding="{Binding date}" DependentValueBinding="{Binding weight}"/>
+                        <charting:LineSeries x:Name="BaselineDataForChart" Title="Baseline" ItemsSource="{StaticResource BaselineDataForChart}" IndependentValueBinding="{Binding date}" DependentValueBinding="{Binding weight}"/-->
+                        <charting:LineSeries x:Name="WeighInDataForChart" Title="Your Progress     " ItemsSource="{StaticResource WeightDataForChart}" IndependentValueBinding="{Binding daysOut}" DependentValueBinding="{Binding weight}"/>
+                        <charting:LineSeries x:Name="BaselineDataForChart" Title="Baseline" ItemsSource="{StaticResource BaselineDataForChart}" IndependentValueBinding="{Binding daysOut}" DependentValueBinding="{Binding weight}"/>
+                    </charting:Chart>
+                    <Button Background="DarkSeaGreen" BorderThickness="1" Content="Weigh In" Height="72" HorizontalAlignment="Left" Margin="133,350,0,0" Name="btnWeighIn" VerticalAlignment="Top" Width="164" Foreground="Black" Click="btnWeighIn_Click" />
+                    <my:AdControl AdUnitId="85712" ApplicationId="bcb06a1f-7792-4ade-b3fc-8f4833939297" Height="80" HorizontalAlignment="Left" Margin="0,417,0,0" Name="adControl1" VerticalAlignment="Top" Width="420" />
+                </Grid>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
+ 
+</phone:PhoneApplicationPage>

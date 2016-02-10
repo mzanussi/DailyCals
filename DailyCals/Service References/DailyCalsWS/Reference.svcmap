@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="78666a14-b723-4058-97f9-038abfe64416" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.squealbark.com/DailyCalsServiceV2.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DailyCalsServiceV2.wsdl" MetadataType="Wsdl" ID="0c61e0a4-5165-4165-b447-3ad036be3893" SourceId="1" SourceUrl="http://www.squealbark.com/squealbark/DailyCalsServiceV2.svc?wsdl" />
+    <MetadataFile FileName="DailyCalsServiceV2.xsd" MetadataType="Schema" ID="fb9bbc9b-eba3-413e-90ec-96a51c93d458" SourceId="1" SourceUrl="http://www.squealbark.com/squealbark/DailyCalsServiceV2.svc?xsd=xsd2" />
+    <MetadataFile FileName="DailyCalsServiceV2.disco" MetadataType="Disco" ID="243b3275-0eee-4453-8f08-87b4c5c6e9a6" SourceId="1" SourceUrl="http://www.squealbark.com/squealbark/DailyCalsServiceV2.svc?disco" />
+    <MetadataFile FileName="DailyCalsServiceV21.xsd" MetadataType="Schema" ID="e8929e88-045b-4c4d-8af6-ea78b964841f" SourceId="1" SourceUrl="http://www.squealbark.com/squealbark/DailyCalsServiceV2.svc?xsd=xsd0" />
+    <MetadataFile FileName="DailyCalsServiceV22.xsd" MetadataType="Schema" ID="8a6a6393-d5e0-46b1-a7e1-d6068d5c0f97" SourceId="1" SourceUrl="http://www.squealbark.com/squealbark/DailyCalsServiceV2.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

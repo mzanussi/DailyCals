@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RemoteProfileRecordV2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activitylevel" type="xs:double" />
+      <xs:element minOccurs="0" name="birthdate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="goaldate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="goalweight" type="xs:double" />
+      <xs:element minOccurs="0" name="height" type="xs:double" />
+      <xs:element minOccurs="0" name="isfemale" type="xs:int" />
+      <xs:element minOccurs="0" name="isstandard" type="xs:int" />
+      <xs:element minOccurs="0" name="profilep" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="startdate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="startweight" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoteProfileRecordV2" nillable="true" type="tns:RemoteProfileRecordV2" />
+</xs:schema>

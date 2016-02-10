@@ -1,0 +1,5 @@
+See changelog.txt for more info.
+
+Original Windows Phone store description:
+
+Daily Cals is the simplest diet tracker you'll use as you pursue your weight loss goals. Simply input your current weight, goal weight, the date that you'd like to achieve your goal weight by, and your activity level, and the application will use the Harris-Benedict equation to calculate the maximum calories you can consume daily to reach your goal weight. You can see at a glance what each week's daily calorie requirements will be. And, every time you weigh in, the application will automatically recalculate your daily calorie requirements for you so that you can stay on track. Along with the percentage of your goal reached and the number of weeks remaining to your end date, each weigh-in will be tracked and graphed on the main screen against a baseline so you can check your progress quickly. * updated version now supports centimeters and kilograms!

@@ -1,0 +1,12 @@
+1.0.0.0			Initial release
+
+1.1.0.0			Support for metric (centimetres and kilograms).
+						DB update to add new field and new web services.
+						New local login feature for demo mode.
+						Remove extraneous import statements.
+						Updated ApplicationIcon.png and Background.png.
+						Replaced NinetyNine.png with 99.png.
+						Renamed SpashScreenImage200.png to 200.png.
+						Moved About.png to the Images folder.
+						Replaced SplashScreenImage.png with Filler.png in Images.
+						Add new ad to weigh-in screen.
